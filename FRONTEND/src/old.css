@@ -1,0 +1,275 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+   
+  }
+  
+  .page {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+  }
+  
+  .header {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile img {
+    width: 40px;
+    margin-right: 8px;
+  }
+  
+  .form-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 300px;
+    backdrop-filter: blur(15px);
+    /* text-align: center; */
+    margin: auto;
+    border: 2px solid rgba( 255, 255,255,0.2);
+    /* height: 350px; */
+    margin-top: 150px;
+  
+  }
+  .hello{
+    width: 300px;
+    height: 35px;
+    border-radius: 25px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    text-indent: 10px;
+    margin-bottom: 20px;
+  }
+  .hello::placeholder{
+    color: white;
+  }
+  .btn{
+    width: 110px;
+    height: 35px;
+    border-radius: 25px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 16px;
+    color: #333;
+    font-weight: bold;
+    text-indent: 10px;
+  }
+  
+  .form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(67, 62, 62);
+    border-radius: 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+  
+  .link {
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    display: inline;
+    position: relative;
+    align-items: end;
+    /* font-weight: bolder; */
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    
+  
+  }
+  
+  .dropdown select {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 180px;
+    background: transparent;
+    color: white;
+  }
+  .link:hover{
+    text-decoration: underline;
+  }
+  .Sub:hover{
+    background-color: black;
+    
+  }
+  .tracker-page {
+    background: url('./assets/tracker-bg.jpeg') no-repeat center center/cover;
+    color: #fff;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  /* Header */
+  .header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 40px;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header span {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Tracker Container */
+  .tracker-container {
+    display: flex;
+    padding: 30px;
+    gap: 25px;
+  }
+  
+  /* Left Panel - Calendar */
+  .calendar-section {
+    flex: 3;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  
+  .calendar-section h3 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffde59;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .calendar-day {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .calendar-day strong {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .calendar-day textarea {
+    width: 100%;
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .calorie-tracker {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .calorie-tracker input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 60%;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  
+  /* Right Panel - Water Tracker */
+  .water-section {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 25px;
+    height: fit-content;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .water-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #38b6ff;
+  }
+  
+  .water-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .water-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+  }
+  
+  

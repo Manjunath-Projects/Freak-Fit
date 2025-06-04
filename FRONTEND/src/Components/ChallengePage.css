@@ -1,0 +1,117 @@
+
+.challenge-page {
+    min-height: 100vh;
+    background: url('./assets/challenge-bg.jpg') no-repeat center center/cover;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .header {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ffde59;
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 2px 2px black;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  .challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .challenge-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    border: 3px solid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  .challenge-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  .challenge-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .icon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .challenge-detail-page {
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh;
+    background: #f7f7f7;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .challenge-detail-page .icon {
+    font-size: 3rem;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .challenge-detail-page h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
