@@ -10,6 +10,7 @@ import WeightTracker from './Components/WeightTracker'
 import ChallengePage from './Components/ChallengePage'
 import ChallengeDetail from './Components/ChallengeDetail'
 import MonthlyFoodTracker from './Components/MonthlyFoodTracker'
+import Dashboard from './Components/Dashboard'
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/challenge/" element={<ChallengePage />} />
         <Route path="/challenge/:challengeId" element={<ChallengeDetail />} />
         <Route path="/food" element={<MonthlyFoodTracker />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
 
       </Routes>
     </Router>
