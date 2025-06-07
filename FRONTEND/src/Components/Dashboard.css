@@ -1,253 +1,229 @@
+.dashboard-main {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
 .dashboard-container {
-    padding: 2rem;
-    background: linear-gradient(90deg, #ffde59, #ffa534);
-    min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
-  }
-  
-  .dashboard-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #111;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  }
-  
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .info-card {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .info-label {
-    font-size: 0.875rem;
-    color: #cccccc;
-  }
-  
-  .info-value {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  .info-subtext {
-    font-size: 0.75rem;
-    color: #aaaaaa;
-  }
-  
-  .chart-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .chart-card {
-    background: #1e1e1e;
-    border-radius: 8px;
-    padding: 0.75rem;
-    height: 250px;
-    overflow: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .chart-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  .goals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .goal-card {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .goal-item {
-    margin-bottom: 1rem;
-  }
-  
-  .goal-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.875rem;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    color: #dddddd;
-  }
-  
-  .goal-bar {
-    background: #333;
-    height: 8px;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .goal-fill {
-    background: #ffffff;
-    height: 8px;
-  }
-  
-  .goal-progress {
-    background: #1e1e1e;
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .progress-percentage {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-  }
-  
-  .progress-note {
-    color: #cccccc;
-    font-size: 0.875rem;
-  }
-  .dashboard-layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  
-  .dashboard-container {
-    flex: 3;
-  }
-  
-  .user-profile {
-    flex: 1;
-    background: #1e1e1e;
-    border-radius: 12px;
-    padding: 1.5rem;
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    min-width: 260px;
-    max-width: 300px;
-  }
-  
-  .profile-card {
-    text-align: center;
-  }
-  
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid #6366f1;
-  }
-  
-  .profile-name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .profile-detail {
-    font-size: 0.9rem;
-    color: #cccccc;
-  }
-  .dashboard-main {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-  
-  .dashboard-container {
-    flex: 3;
-  }
-  
-  .profile-sidebar {
-    flex: 1;
-    background: #1e1e1e;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    max-width: 300px;
-  }
-  
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 999px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 1rem;
-    border: 3px solid #6366f1;
-  }
-  
-  .profile-name {
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .profile-detail {
-    text-align: center;
-    font-size: 0.875rem;
-    color: #bbbbbb;
-    margin-bottom: 0.25rem;
-  }
-  
-  .profile-section {
-    margin-top: 1.5rem;
-  }
-  
-  .section-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #a5b4fc;
-  }
-  
-  .section-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .section-list li {
-    background: linear-gradient(90deg, #ffde59, #ffa534);
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 6px;
-    font-size: 0.875rem;
-  }
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #00ffff;
-    box-shadow: 0 0 10px #00ffff88;
-    margin-bottom: 1rem;
-  }
-  
-  
-  
-  
-  
+  flex: 1;
+  background: linear-gradient(90deg, #ffde59, #ffa534);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #111;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-label {
+  font-size: 0.875rem;
+  color: #cccccc;
+}
+
+.info-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.info-subtext {
+  font-size: 0.75rem;
+  color: #aaaaaa;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 0.75rem;
+  height: 250px;
+  overflow: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chart-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.goal-card {
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.goal-item {
+  margin-bottom: 1rem;
+}
+
+.goal-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  color: #dddddd;
+}
+
+.goal-bar {
+  background: #333;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.goal-fill {
+  background: #ffffff;
+  height: 8px;
+}
+
+.goal-progress {
+  background: #1e1e1e;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.progress-percentage {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.progress-note {
+  color: #cccccc;
+  font-size: 0.875rem;
+}
+
+.profile-sidebar-wrapper {
+  flex: 1;
+  min-width: 260px;
+  max-width: 300px;
+}
+
+.profile-sidebar {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dfd009;
+  box-shadow: 0 0 10px #ffdd0088;
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.profile-detail {
+  font-size: 0.875rem;
+  color: #bbbbbb;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.profile-section {
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #a5b4fc;
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-list li {
+  background: linear-gradient(90deg, #ffde59, #ffa534);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.profile-action-button {
+  padding: 0.5rem 1rem;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.profile-action-button.logout {
+  background: #ef4444;
+}
+
+.profile-action-button:hover {
+  opacity: 0.9;
+}

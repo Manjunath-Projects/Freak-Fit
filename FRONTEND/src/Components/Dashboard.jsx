@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Dashboard.css';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import profileImage from '../assets/IMG_5309.JPG';
 
 const Dashboard = () => {
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  };
+
   return (
     <div className="dashboard-main">
-      {/* LEFT: Dashboard */}
+      {/* LEFT: Dashboard Content */}
       <div className="dashboard-container">
         <h1 className="dashboard-title">Welcome Back 🎉</h1>
 
@@ -81,32 +89,62 @@ const Dashboard = () => {
       </div>
 
       {/* RIGHT: User Profile Sidebar */}
-      <div className="profile-sidebar">
-      <img src={profileImage} alt="Profile" className="profile-pic" />
+      <div className="profile-sidebar-wrapper">
+        <div className="profile-sidebar">
+          <div className="profile-card">
+            <img src={profileImage} alt="Profile" className="profile-pic" />
+            <h3 className="profile-name">Your name</h3>
+            <p className="profile-detail">Age: 0</p>
+            <p className="profile-detail">Height: 0 cm</p>
+            <p className="profile-detail">Weight: 0 kg</p>
+            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <button onClick={() => setShowEditModal(true)} className="profile-action-button">✏️ Edit</button>
+              <button onClick={() => setShowLogoutConfirm(true)} className="profile-action-button logout">🚪 Logout</button>
+            </div>
+          </div>
 
-        <h3 className="profile-name">Your name</h3>
-        <p className="profile-detail">Age: 0 </p>
-        <p className="profile-detail">Height: 0 cm</p>
-        <p className="profile-detail">Weight: 0 kg</p>
+          <div className="profile-section">
+            <h4 className="section-title">Your Goals</h4>
+            <ul className="section-list">
+              <li>🏃 Run 3x/week</li>
+              <li>💧 3L water/day</li>
+              <li>🍎 1800 kcal diet</li>
+            </ul>
+          </div>
 
-        <div className="profile-section">
-          <h4 className="section-title">Your Goals</h4>
-          <ul className="section-list">
-            <li>🏃 Run 3x/week</li>
-            <li>💧 3L water/day</li>
-            <li>🍎 1800 kcal diet</li>
-          </ul>
-        </div>
-
-        <div className="profile-section">
-          <h4 className="section-title">Scheduled Activities</h4>
-          <ul className="section-list">
-            <li>🧘 Yoga - 7 AM</li>
-            <li>🏋️ Gym - 6 PM</li>
-            <li>🚴 Cycling - Sunday</li>
-          </ul>
+          <div className="profile-section">
+            <h4 className="section-title">Scheduled Activities</h4>
+            <ul className="section-list">
+              <li>🧘 Yoga - 7 AM</li>
+              <li>🏋️ Gym - 6 PM</li>
+              <li>🚴 Cycling - Sunday</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      {/* Edit Profile Modal */}
+      {showEditModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Edit Profile (Coming Soon)</h2>
+            <button onClick={() => setShowEditModal(false)} className="close-btn">Close</button>
+          </div>
+        </div>
+      )}
+
+      {/* Logout Confirmation Dialog */}
+      {showLogoutConfirm && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Are you sure you want to logout?</h2>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1rem' }}>
+              <button onClick={handleLogout} className="confirm-btn">Yes, Logout</button>
+              <button onClick={() => setShowLogoutConfirm(false)} className="close-btn">Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
