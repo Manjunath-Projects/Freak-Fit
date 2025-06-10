@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  dob: String, // optional but included since it's in register form
   age: Number,
   height: Number,
   weight: Number,

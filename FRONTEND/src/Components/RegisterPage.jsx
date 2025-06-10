@@ -18,11 +18,13 @@ function RegisterPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:5050/api/register', {
+      const res = await fetch('http://localhost:5090/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          username: email,
+          name,
+          dob,
+          email,
           password,
         }),
       });
