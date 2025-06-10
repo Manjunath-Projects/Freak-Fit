@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Dashboard.css';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -7,6 +7,53 @@ import profileImage from '../assets/IMG_5309.JPG';
 const Dashboard = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [userName,setUsername]=useState("Loading...");
+  const [userAge, setUserAge] = useState(0); // You can also fetch these later
+  const [userHeight, setUserHeight] = useState(0);
+  const [userWeight, setUserWeight] = useState(0);
+
+    useEffect(() => {
+    const fetchUserData = async () => {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        window.location.href = '/login';
+        return;
+      }
+
+      console.log("Token:", token);
+
+      try {
+        const res = await fetch('http://localhost:5090/api/auth/me', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+
+         console.log("Response status:", res.status);
+
+        if (!res.ok) {
+          throw new Error('Failed to fetch user data');
+        }
+
+        const data = await res.json();
+
+        console.log("User data received:", data);
+
+        setUsername(data.name || 'Guest');
+        setUserAge(data.age || 0);
+        setUserHeight(data.height || 0);
+        setUserWeight(data.weight || 0);
+      } catch (err) {
+        console.error(err);
+        alert('Failed to load user data');
+        window.location.href = '/login';
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -93,10 +140,10 @@ const Dashboard = () => {
         <div className="profile-sidebar">
           <div className="profile-card">
             <img src={profileImage} alt="Profile" className="profile-pic" />
-            <h3 className="profile-name">Your name</h3>
-            <p className="profile-detail">Age: 0</p>
-            <p className="profile-detail">Height: 0 cm</p>
-            <p className="profile-detail">Weight: 0 kg</p>
+            <h3 className="profile-name">{userName}</h3>
+            <p className="profile-detail">Age: {userAge}</p>
+            <p className="profile-detail">Height: {userHeight} cm</p>
+            <p className="profile-detail">Weight: {userWeight} kg</p>
             <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <button onClick={() => setShowEditModal(true)} className="profile-action-button">✏️ Edit</button>
               <button onClick={() => setShowLogoutConfirm(true)} className="profile-action-button logout">🚪 Logout</button>
