@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  const [userName, setUsername] = useState("Loading...");
+  const [userName, setUsername] = useState("Guest");
   const [userAge, setUserAge] = useState(0);
   const [userHeight, setUserHeight] = useState(0);
   const [userWeight, setUserWeight] = useState(0);
@@ -27,7 +27,7 @@ const Dashboard = () => {
           'Authorization': `Bearer ${token}`,
         },
       });
-
+      
       if (!res.ok) throw new Error('Failed to fetch user data');
 
       const data = await res.json();
