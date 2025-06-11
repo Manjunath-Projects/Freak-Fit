@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -53,19 +53,15 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-main">
-      {/* LEFT: Dashboard Content */}
       <div className="dashboard-container">
         <h1 className="dashboard-title">Welcome Back 🎉</h1>
 
-        {/* Navigation Buttons */}
         <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
           <button className="nav-button" onClick={() => navigate('/goal')}>🏃 BMI-Genration</button>
           <button className="nav-button" onClick={() => navigate('/tracker')}>🙋 Calorie-Tracker </button>
           <button className="nav-button" onClick={() => navigate('/weight-tracker')}>🏋Weight-tracker</button>
           <button className="nav-button" onClick={() => navigate('/food')}>🍽️ Food Tracker</button>
           <button className="nav-button" onClick={() => navigate('/challenge')}>🏆 Challenges</button>
-          
-          
         </div>
 
         <div className="card-grid">
@@ -137,7 +133,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* RIGHT: User Profile Sidebar */}
       <div className="profile-sidebar-wrapper">
         <div className="profile-sidebar">
           <div className="profile-card">
@@ -172,7 +167,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Edit Profile Modal */}
       {showEditModal && (
         <div className="modal-overlay">
           <div className="modal">
@@ -182,7 +176,6 @@ const Dashboard = () => {
         </div>
       )}
 
-      {/* Logout Confirmation Dialog */}
       {showLogoutConfirm && (
         <div className="modal-overlay">
           <div className="modal">
