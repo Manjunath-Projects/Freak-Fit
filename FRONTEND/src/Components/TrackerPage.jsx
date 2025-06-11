@@ -120,8 +120,8 @@ function TrackerPage() {
       <div className="header" style={{ padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>FREAKY TRACKER!!!!</span>
         <div className="profile" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <img src="https://img.icons8.com/emoji/48/weight-lifter.png" alt="User" style={{ width: '36px', height: '36px' }} />
-          <span style={{ fontWeight: '500' }}>USER</span>
+          {/* <img src="https://img.icons8.com/emoji/48/weight-lifter.png" alt="User" style={{ width: '36px', height: '36px' }} /> */}
+          {/* <span style={{ fontWeight: '500' }}>USER</span> */}
         </div>
       </div>
 

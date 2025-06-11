@@ -26,6 +26,11 @@ function MonthlyFoodTracker() {
     }));
   };
 
+  const handleSave = () => {
+    localStorage.setItem('monthlyFoodLogs', JSON.stringify(logs));
+    alert('Logs saved successfully!');
+  };
+
   const mealPlaceholders = {
     breakfast: '🍳 Log your breakfast...',
     lunch: '🍛 Log your lunch...',
@@ -37,6 +42,21 @@ function MonthlyFoodTracker() {
     <div className="page" style={{ minHeight: '100vh', backgroundColor: '#121212', color: 'white', padding: '2rem' }}>
       <div className="header" style={{ paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', marginBottom: '2rem', textAlign: 'center' }}>
         <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>🗓️ 30-Day Meal Tracker</h1>
+        <button
+          onClick={handleSave}
+          style={{
+            background: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.5rem',
+            cursor: 'pointer',
+            fontSize: '1rem',
+            marginTop: '1rem'
+          }}
+        >
+          💾 Save Logs
+        </button>
       </div>
 
       <div className="day-scroll" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center', maxWidth: '1400px', margin: '0 auto' }}>
@@ -79,6 +99,19 @@ function MonthlyFoodTracker() {
                     fontSize: '0.9rem'
                   }}
                 />
+                {/* <button
+                  onClick={() => handleMealChange(day, meal, '')}
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '0.5rem',
+                    cursor: 'pointer',
+                    fontSize: '0.85rem'
+                  }}
+                >
+                </button> */}
               </div>
             ))}
           </div>

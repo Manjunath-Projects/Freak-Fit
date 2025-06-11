@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const WeightTracker = () => {
   const [weights, setWeights] = useState(Array(30).fill(''));
   const [currentWeight, setCurrentWeight] = useState('');
+
+  useEffect(() => {
+    const savedWeights = localStorage.getItem('weights');
+    if (savedWeights) {
+      setWeights(JSON.parse(savedWeights));
+    }
+  }, []);
 
   const handleChange = (index, value) => {
     const updated = [...weights];
@@ -19,13 +26,18 @@ const WeightTracker = () => {
     const initialWeight = filledWeights[0];
     const latestWeight = filledWeights[filledWeights.length - 1];
 
-    const weightChange = latestWeight - initialWeight;
-    return weightChange;
+    return latestWeight - initialWeight;
+  };
+
+  const saveProgress = () => {
+    localStorage.setItem('weights', JSON.stringify(weights));
+    alert('Progress saved!');
   };
 
   const clearAll = () => {
     setWeights(Array(30).fill(''));
     setCurrentWeight('');
+    localStorage.removeItem('weights');
   };
 
   const weightChange = calculateWeightChange();
@@ -87,10 +99,13 @@ const WeightTracker = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          style={{ marginTop: '2rem' }}
+          style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}
         >
-          <button onClick={clearAll} style={{ backgroundColor: '#4dc3ff', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none' }}>
-            Clear All
+          <button onClick={saveProgress} style={{ backgroundColor: '#4caf50', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none' }}>
+            💾 Save Progress
+          </button>
+          <button onClick={clearAll} style={{ backgroundColor: '#f44336', color: 'white', padding: '0.75rem 1.5rem', borderRadius: '0.5rem', border: 'none' }}>
+            🗑️ Clear All
           </button>
         </motion.div>
       </div>

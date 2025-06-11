@@ -227,3 +227,16 @@
 .profile-action-button:hover {
   opacity: 0.9;
 }
+.nav-button {
+  padding: 0.5rem 1rem;
+  background: #010101;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.nav-button:hover {
+  background: linear-gradient(90deg, #de4217, #ffa534);
+}

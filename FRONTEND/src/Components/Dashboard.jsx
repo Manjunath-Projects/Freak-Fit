@@ -3,10 +3,12 @@ import './Dashboard.css';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
 import profileImage from '../assets/IMG_5309.JPG';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -18,6 +20,17 @@ const Dashboard = () => {
       {/* LEFT: Dashboard Content */}
       <div className="dashboard-container">
         <h1 className="dashboard-title">Welcome Back 🎉</h1>
+
+        {/* Navigation Buttons */}
+        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+          <button className="nav-button" onClick={() => navigate('/goal')}>🏃 BMI-Genration</button>
+          <button className="nav-button" onClick={() => navigate('/tracker')}>🙋 Calorie-Tracker </button>
+          <button className="nav-button" onClick={() => navigate('/weight-tracker')}>🏋Weight-tracker</button>
+          <button className="nav-button" onClick={() => navigate('/food')}>🍽️ Food Tracker</button>
+          <button className="nav-button" onClick={() => navigate('/challenge')}>🏆 Challenges</button>
+          
+          
+        </div>
 
         <div className="card-grid">
           <Card label="Steps" value="2,500 Steps" subtext="50% of your goal" />
