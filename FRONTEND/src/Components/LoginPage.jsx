@@ -10,7 +10,7 @@ function LoginPage() {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://localhost:5090/api/login', {
+      const res = await fetch('http://localhost:5090/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

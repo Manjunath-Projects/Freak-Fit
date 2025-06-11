@@ -18,7 +18,7 @@ function RegisterPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:5090/api/register', {
+      const res = await fetch('http://localhost:5090/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -32,8 +32,14 @@ function RegisterPage() {
       const data = await res.json();
 
       if (res.ok) {
+        console.log("Sending registration data:", {
+  name,
+  dob,
+  email,
+  password,
+});
         alert("Registration successful! You can now log in.");
-        navigate('/login');
+        navigate('/');
       } else {
         setError(data.error || "Registration failed");
       }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Dashboard.css';
 import { Line, Doughnut, Bar } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const Dashboard = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -106,10 +105,10 @@ const Dashboard = () => {
         <div className="profile-sidebar">
           <div className="profile-card">
             <img src={profileImage} alt="Profile" className="profile-pic" />
-            <h3 className="profile-name">Your name</h3>
-            <p className="profile-detail">Age: 0</p>
-            <p className="profile-detail">Height: 0 cm</p>
-            <p className="profile-detail">Weight: 0 kg</p>
+            <h3 className="profile-name">{userName}</h3>
+            <p className="profile-detail">Age: {userAge}</p>
+            <p className="profile-detail">Height: {userHeight} cm</p>
+            <p className="profile-detail">Weight: {userWeight} kg</p>
             <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <button onClick={() => setShowEditModal(true)} className="profile-action-button">✏️ Edit</button>
               <button onClick={() => setShowLogoutConfirm(true)} className="profile-action-button logout">🚪 Logout</button>
