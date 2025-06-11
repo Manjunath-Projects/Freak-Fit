@@ -6,8 +6,45 @@ import profileImage from '../assets/IMG_5309.JPG';
 import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const [showEditModal, setShowEditModal] = useState(false);
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [userName, setUsername] = useState("Loading...");
+  const [userAge, setUserAge] = useState(0);
+  const [userHeight, setUserHeight] = useState(0);
+  const [userWeight, setUserWeight] = useState(0);
+
+
+  useEffect(() => {
+  const fetchUserData = async () => {
+    const token = localStorage.getItem('token');
+    if (!token) return navigate('/login');
+
+    try {
+      const res = await fetch('http://localhost:5090/api/auth/me', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      if (!res.ok) throw new Error('Failed to fetch user data');
+
+      const data = await res.json();
+
+      setUsername(data.name || 'Guest');
+      setUserAge(data.age ?? 0);
+      setUserHeight(data.height ?? 0);
+      setUserWeight(data.weight ?? 0);
+
+    } catch (err) {
+      console.error(err);
+      navigate('/login');
+    }
+  };
+
+  fetchUserData();
+}, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
