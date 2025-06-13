@@ -11,6 +11,10 @@ import ChallengePage from './Components/ChallengePage'
 import ChallengeDetail from './Components/ChallengeDetail'
 import MonthlyFoodTracker from './Components/MonthlyFoodTracker'
 import Dashboard from './Components/Dashboard'
+import TrainerWorkoutPlans from './Components/TrainerWorkoutplans'
+import TrainerDietPlans from './Components/TrainerDietPlans'
+import TrainerDashboard from './Components/TrainerDashboard'
+import AdminDashboard from './Components/AdminDashboard'
 
 
 
@@ -30,6 +34,10 @@ function App() {
         <Route path="/challenge/:challengeId" element={<ChallengeDetail />} />
         <Route path="/food" element={<MonthlyFoodTracker />} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/workout" element={<TrainerWorkoutPlans />} />
+        <Route path="/diet" element={<TrainerDietPlans />} />
+        <Route path="/train-dash" element={<TrainerDashboard />} />
+        <Route path="/admin" element={<AdminDashboard/>} />
 
       </Routes>
     </Router>
