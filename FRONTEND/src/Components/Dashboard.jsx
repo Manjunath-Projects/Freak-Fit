@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [userHeight, setUserHeight] = useState(0);
   const [userWeight, setUserWeight] = useState(0);
 
-  
+
   useEffect(() => {
   const fetchUserData = async () => {
     const token = localStorage.getItem('token');
@@ -57,7 +57,7 @@ const Dashboard = () => {
         <h1 className="dashboard-title">Welcome Back 🎉</h1>
 
         <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-          <button className="nav-button" onClick={() => navigate('/goal')}>🏃 BMI-Genration</button>
+         <button className="nav-button" onClick={() =>navigate('/goal', {state: {age: userAge,height: userHeight,weight: userWeight,},})}>🏃 BMI-Generation </button>
           <button className="nav-button" onClick={() => navigate('/tracker')}>🙋 Calorie-Tracker </button>
           <button className="nav-button" onClick={() => navigate('/weight-tracker')}>🏋Weight-tracker</button>
           <button className="nav-button" onClick={() => navigate('/food')}>🍽️ Food Tracker</button>
@@ -138,7 +138,7 @@ const Dashboard = () => {
           <div className="profile-card">
             <img src={profileImage} alt="Profile" className="profile-pic" />
             <h3 className="profile-name">{userName}</h3>
-            <p className="profile-detail">Age: {userAge}</p>
+            <p className="profile-detail">Age: {userAge} Years</p>
             <p className="profile-detail">Height: {userHeight} cm</p>
             <p className="profile-detail">Weight: {userWeight} kg</p>
             <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

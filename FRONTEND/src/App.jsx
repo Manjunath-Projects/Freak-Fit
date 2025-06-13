@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    <Router>
+    
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -32,7 +32,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>} />
 
       </Routes>
-    </Router>
+    
      
     </>
   )

@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import '../App.css';
 import goalBg from '../assets/goal-bg.jpeg';
 import Swal from 'sweetalert2'; // ✅ Import SweetAlert2
+import { useLocation } from 'react-router-dom';
 
 function GoalPage() {
-  const [age, setAge] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
+const location = useLocation();
+  const {
+    age: initialAge = '',
+    height: initialHeight = '',
+    weight: initialWeight = ''
+  } = location.state || {};
+
+const [age, setAge] = useState(initialAge);
+  const [height, setHeight] = useState(initialHeight);
+  const [weight, setWeight] = useState(initialWeight);
   const [gender, setGender] = useState('male');
   const [activity, setActivity] = useState('Beginner');
 
@@ -64,9 +72,8 @@ function GoalPage() {
     <div className="page" style={{ backgroundImage: `url(${goalBg})` }}>
       <div className="header">
         <span>FREAKY GOAL!!!!</span>
-        <div className="profile">
-          <img src="https://img.icons8.com/emoji/48/weight-lifter.png" alt="User" />
-          <span>USER</span>
+        <div className="profile" >🏋️
+        <span>USER</span>
         </div>
       </div>
 
@@ -89,9 +96,9 @@ function GoalPage() {
         </select>
 
         <select className="btn" value={activity} onChange={(e) => setActivity(e.target.value)}>
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
+          <option>Weight Loss</option>
+          <option>Weight Gain</option>
+          <option>Maintenance</option>
         </select>
 
         <button className="Sub" onClick={calculateMetrics}>Submit</button>

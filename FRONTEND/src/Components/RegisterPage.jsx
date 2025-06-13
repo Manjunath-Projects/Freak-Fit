@@ -8,6 +8,13 @@ function RegisterPage() {
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
   const [email, setEmail] = useState('');
+  
+  const [age, setAge] = useState('');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+
+
+
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
@@ -25,6 +32,9 @@ function RegisterPage() {
           name,
           dob,
           email,
+          age,
+          height,
+          weight,
           password,
         }),
       });
@@ -58,8 +68,18 @@ function RegisterPage() {
         <h3>New User</h3>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <input className="hello" type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} /><br />
-        <input className="hello" type="date" placeholder="DOB" value={dob} onChange={(e) => setDob(e.target.value)} /><br />
         <input className="hello" type="email" placeholder="Email ID" value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+
+        <div className="input-row">
+        <input className="hello" type="date" placeholder="DOB" value={dob} onChange={(e) => setDob(e.target.value)} /><br />      
+        <input className="hello" type="number" placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} /><br />
+        </div>
+
+        <div className="input-row">
+        <input className="hello" type="number" placeholder="Hight" value={height} onChange={(e) => setHeight(e.target.value)} /><br />
+        <input className="hello" type="number" placeholder="Weight" value={weight} onChange={(e) => setWeight(e.target.value)} /><br />
+        </div>
+        
         <input className="hello" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
         <input className="hello" type="password" placeholder="Confirm Password" value={confirm} onChange={(e) => setConfirm(e.target.value)} /><br />
         <button className="Sub" onClick={handleRegister}>Submit</button>

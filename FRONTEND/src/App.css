@@ -46,9 +46,25 @@ body, html {
   margin: auto;
   border: 2px solid rgba( 255, 255,255,0.2);
   /* height: 350px; */
-  margin-top: 150px;
+  margin-top: 120px;
 
 }
+
+/* .form-container1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  width: 300px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin-top: 150px;
+} */
+
 .hello{
   width: 300px;
   height: 35px;
@@ -59,6 +75,18 @@ body, html {
   text-indent: 10px;
   margin-bottom: 20px;
 }
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-row .hello {
+  width: 130px; /* Half of your original width (300px), minus gap */
+}
+
 .hello::placeholder{
   color: white;
 }
